@@ -49,6 +49,12 @@ namespace StringManipulation
                 .ToArray());
         }
 
+        public bool IsPalindrome(string input)
+        {
+            string reversed = ReverseString(input);
+            return input.Equals(reversed, StringComparison.OrdinalIgnoreCase);
+        }
+
         public string TruncateString(string input, int maxLength)
         {
             if(maxLength <=0)
@@ -62,12 +68,6 @@ namespace StringManipulation
             }
 
             return input.Substring(0, maxLength);
-        }
-
-        public bool IsPalindrome(string input)
-        {
-            string reversed = ReverseString(input);
-            return input.Equals(reversed, StringComparison.OrdinalIgnoreCase);
         }
 
         public int CountOccurrences(string input, char character)
